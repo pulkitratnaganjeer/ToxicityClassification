@@ -1,0 +1,7 @@
+tensorflow==2.8.0
+flask==2.0.1
+re==2.2.1
+bs4==4.9.3 or 4.10.0 or 4.6.3
+pandas==1.3.4 or 1.3.5
+pickle==4.0
+unidecode

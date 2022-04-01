@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jigsaw Unintended Bias in Toxicity Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Jigsaw Unintended Bias in Toxicity Classification</h1>
+    </div>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="container form-group padding-left">
+            <div class="row">
+                <div class="col-sm-4 text-right">
+                    <label for="comment">Enter Comment:</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea class="min-width-100p" name="comment" maxlength="1250" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
+                    {% if toxicity%}
+                    {% if toxicity.isToxic == 'Yes' %}
+                    Likely to be perceived as toxic ({{toxicity.toxicityScore}})
+                    {% else %}
+                    Unlikely to be perceived as toxic ({{toxicity.toxicityScore}})
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
+                    <input type="submit" class="btn btn-primary" value="Predict">
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
