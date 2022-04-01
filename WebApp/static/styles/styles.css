@@ -1,0 +1,11 @@
+label {
+    font-size: 1.2em;
+}
+
+.padding-left {
+    padding-left: 15em;
+}
+
+.min-width-100p {
+    min-width: 100%;
+}
